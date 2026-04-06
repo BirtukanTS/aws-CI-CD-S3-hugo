@@ -1,3 +1,4 @@
+
 version: 0.2
 
 phases:
@@ -5,7 +6,6 @@ phases:
     runtime-versions:
       golang: 1.x
     commands:
-      # Fixed the download links to use 'amd64' instead of '64bit'
       - wget https://github.com/gohugoio/hugo/releases/download/v0.121.1/hugo_extended_0.121.1_linux-amd64.tar.gz
       - tar -xzf hugo_extended_0.121.1_linux-amd64.tar.gz
       - mv hugo /usr/local/bin/
@@ -15,6 +15,8 @@ phases:
       - hugo --minify
   post_build:
     commands:
+      # This is your manual fix
+      - aws s3 sync public/ s3://hugo-static-website --region us-east-1
       - echo Build completed on `date`
 artifacts:
   files:
