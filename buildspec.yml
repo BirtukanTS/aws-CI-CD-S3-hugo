@@ -16,7 +16,7 @@ phases:
   post_build:
     commands:
       # This is your manual fix
-      - aws s3 sync public/ s3://hugo-static-website --region us-east-1
+      
       - echo Build completed on `date`
 artifacts:
   files:
