@@ -15,6 +15,7 @@ phases:
       - hugo --minify
   post_build:
     commands:
+      - aws s3 sync public/ s3://amzn-for-demo --region eu-north-1
       - echo Build completed on `date`
 artifacts:
   files:
