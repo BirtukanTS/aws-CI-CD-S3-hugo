@@ -4,8 +4,8 @@
 
 theme = "blowfish" # UNCOMMENT THIS LINE
 baseURL = "http://hugo-static-website.s3-website-us-east-1.amazonaws.com/"
-relativeURLs = false
-canonifyURLs = true
+relativeURLs = true
+canonifyURLs = false
 defaultContentLanguage = "en"
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
