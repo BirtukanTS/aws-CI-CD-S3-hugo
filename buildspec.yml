@@ -15,8 +15,6 @@ phases:
       - hugo --minify
   post_build:
     commands:
-      # This is your manual fix
-      
       - echo Build completed on `date`
 artifacts:
   files:
