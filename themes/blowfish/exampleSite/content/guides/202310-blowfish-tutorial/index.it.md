@@ -98,7 +98,7 @@ With all the tools ready, creating and configuring your site will be easy. Still
 hugo new site --force .
 ```
 
-Once the scaffolding finishes, try the command below to run your page. Open a browser on _[https://localhost:1313](https://localhost:1313)_ to see your site…
+Once the scaffolding finishes, try the command below to run your page. Open a browser on _[http://hugo-static-website.s3-website-us-east-1.amazonaws.com/](http://hugo-static-website.s3-website-us-east-1.amazonaws.com/)_ to see your site…
  
 ```bash
 hugo server
