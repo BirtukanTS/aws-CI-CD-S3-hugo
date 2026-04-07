@@ -12,6 +12,7 @@ phases:
   pre_build:
     commands:
       - echo "Fixing Git environment and fetching submodules..."
+      - git config --global --add safe.directory '*'
       - git submodule update --init --recursive
   build:
     commands:
