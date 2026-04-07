@@ -5,21 +5,23 @@ phases:
     runtime-versions:
       golang: 1.x
     commands:
-      - echo "Installing Hugo and fetching theme submodules..."
-      # Install Hugo Extended
+      - echo "Installing Hugo Extended..."
       - wget https://github.com/gohugoio/hugo/releases/download/v0.121.1/hugo_extended_0.121.1_linux-amd64.tar.gz
       - tar -xzf hugo_extended_0.121.1_linux-amd64.tar.gz
       - mv hugo /usr/local/bin/
-      # Force pull the Blowfish theme files
+  pre_build:
+    commands:
+      - echo "Fixing Git environment and fetching submodules..."
       - git submodule update --init --recursive
   build:
     commands:
-      - echo "Starting Hugo build..."
+      - echo "Build started on $(date)"
       - hugo --minify
   post_build:
     commands:
-      - echo "Build finished. Syncing to S3..."
+      - echo "Build completed on $(date)"
+
 artifacts:
   files:
     - '**/*'
-  base-directory: 'public'
+  base-directory: public
